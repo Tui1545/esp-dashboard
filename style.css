@@ -1,0 +1,136 @@
+*{box-sizing:border-box}
+
+body{
+  font-family:system-ui,Segoe UI,Arial;
+  margin:16px;
+  background:#ffffff;
+  color:#111111;
+}
+
+header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:12px;
+  flex-wrap:wrap;
+}
+
+h1{margin:0;font-size:20px}
+
+.status{
+  padding:8px 12px;
+  border-radius:999px;
+  background:#f3f4f6;
+  color:#111111;
+  border:1px solid #e5e7eb;
+}
+
+.status.ok{
+  background:#ecfdf5;
+  border-color:#10b981;
+  color:#065f46;
+}
+
+.status.bad{
+  background:#fef2f2;
+  border-color:#ef4444;
+  color:#991b1b;
+}
+
+.grid{
+  margin-top:14px;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+  gap:12px;
+}
+
+.card{
+  background:#ffffff;
+  border:1px solid #e5e7eb;
+  border-radius:14px;
+  padding:14px;
+  box-shadow:0 6px 18px rgba(0,0,0,.08);
+
+  /* ✅ กันล้น */
+  overflow:hidden;
+}
+
+.label{color:#6b7280;font-size:13px}
+
+.value{
+  margin-top:6px;
+  font-size:34px;
+  font-weight:700;
+  letter-spacing:.5px;
+  color:#111111;
+}
+
+.value small{font-size:14px;color:#6b7280;font-weight:600}
+
+footer{
+  margin-top:14px;
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+  align-items:center;
+}
+
+/* ปุ่มปกติ (footer) */
+button{
+  padding:10px 14px;
+  border-radius:12px;
+  border:1px solid #111827;
+  background:#111827;
+  color:#ffffff;
+  cursor:pointer;
+
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+
+  white-space:nowrap;
+  line-height:1.1;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  min-height:44px;
+}
+
+button:hover{filter:brightness(1.05)}
+
+/* ✅ ปุ่มในกรอบการ์ดควบคุมไฟ */
+.card-actions{
+  margin-top:12px;
+  display:flex;
+  gap:10px;
+  width:100%;
+}
+
+.card-actions button{
+  flex:1 1 0;     /* ✅ แบ่งครึ่ง + หดได้ */
+  min-width:0;    /* ✅ สำคัญมาก: กันดันออกนอกกรอบ */
+  padding:10px 12px;
+  border-radius:12px;
+  font-size:14px;
+  white-space:nowrap;
+}
+
+/* สีแยกปุ่ม เปิด/ปิด */
+.btn-on{
+  background:#16a34a;
+  border-color:#16a34a;
+  color:#fff;
+}
+
+.btn-off{
+  background:#dc2626;
+  border-color:#dc2626;
+  color:#fff;
+}
+
+.btn-on:hover,.btn-off:hover{filter:brightness(1.05)}
+
+/* มือถือ: ให้ปุ่มเล็กลงนิด */
+@media (max-width: 420px){
+  .card-actions{ gap:8px; }
+  .card-actions button{ font-size:13px; padding:9px 10px; }
+}

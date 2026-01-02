@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="th">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>ESP Live Dashboard</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>ESP Live Dashboard</h1>
+    <div id="status" class="status">กำลังเชื่อมต่อ...</div>
+  </header>
+
+  <main class="grid">
+    <section class="card">
+      <div class="label">แรงดัน</div>
+      <div class="value"><span id="voltage">-</span> <small>V</small></div>
+    </section>
+
+    <section class="card">
+      <div class="label">กระแส</div>
+      <div class="value"><span id="current">-</span> <small>A</small></div>
+    </section>
+
+    <!-- ✅ การ์ดใหม่: ควบคุมไฟ (เหมือนการ์ดกระแส แต่เป็นปุ่ม) -->
+    <section class="card">
+      <div class="label">ควบคุมไฟ</div>
+      <div class="value"><span id="relayState">-</span> <small>RELAY</small></div>
+
+      <div class="card-actions">
+        <button id="btnLightOn" class="btn-on">เปิดไฟ</button>
+        <button id="btnLightOff" class="btn-off">ปิดไฟ</button>
+      </div>
+    </section>
+
+    <section class="card">
+      <div class="label">ความถี่</div>
+      <div class="value"><span id="hz">-</span> <small>Hz</small></div>
+    </section>
+
+    <section class="card">
+      <div class="label">กำลังไฟฟ้า</div>
+      <div class="value"><span id="watt">-</span> <small>W</small></div>
+    </section>
+
+    <section class="card">
+      <div class="label">Uptime</div>
+      <div class="value"><span id="uptime">-</span> <small>s</small></div>
+    </section>
+  </main>
+
+  <footer>
+    <button id="btnOnce">อัปเดตครั้งเดียว</button>
+    <button id="btnToggle">หยุดอัปเดต</button>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
