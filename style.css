@@ -37,10 +37,11 @@ h1{margin:0;font-size:20px}
   color:#991b1b;
 }
 
+/* ✅ แก้ตรงนี้: ล็อกเป็น 3 คอลัมน์ (คอม) */
 .grid{
   margin-top:14px;
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+  grid-template-columns:repeat(3,minmax(180px,1fr));
   gap:12px;
 }
 
@@ -129,7 +130,17 @@ button:hover{filter:brightness(1.05)}
 
 .btn-on:hover,.btn-off:hover{filter:brightness(1.05)}
 
-/* มือถือ: ให้ปุ่มเล็กลงนิด */
+/* ✅ จอกลาง/แท็บเล็ต: เหลือ 2 คอลัมน์ */
+@media (max-width: 900px){
+  .grid{ grid-template-columns:repeat(2,minmax(180px,1fr)); }
+}
+
+/* ✅ มือถือ: เหลือ 1 คอลัมน์ */
+@media (max-width: 520px){
+  .grid{ grid-template-columns:1fr; }
+}
+
+/* มือถือเล็ก: ให้ปุ่มเล็กลงนิด */
 @media (max-width: 420px){
   .card-actions{ gap:8px; }
   .card-actions button{ font-size:13px; padding:9px 10px; }

@@ -1,10 +1,8 @@
 // =====================
 // ✅ ตั้งค่าใช้งานตรงนี้
 // =====================
-const MODE = "FILE_TO_ESP";       // DEMO | FILE_TO_ESP | ON_ESP
-const ESP_IP = "192.168.1.195";   // <-- เปลี่ยนเป็น IP ของคุณ
-
-let apiUrl = "/api";
+const MODE = "ON_ESP";       // DEMO | FILE_TO_ESP | ON_ESP
+let apiUrl = "https://Tui.trycloudflare.com/api";
 let DEMO_MODE = false;
 
 if (MODE === "DEMO") {
